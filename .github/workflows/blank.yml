@@ -20,6 +20,6 @@ jobs:
       - name: Deploy # 将打包内容发布到 github page
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with: # 自定义环境变量
-          BRANCH: web
-          FOLDER: build
-          REPOSITORY_NAME: zsqtony/web
+          BRANCH: web # 打包后的文件存放分支名称
+          FOLDER: build # 打包后的分支
+          REPOSITORY_NAME: zsqtony/web # 存放目标分支
