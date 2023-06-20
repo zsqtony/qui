@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkv_2_2=self.webpackChunkv_2_2||[]).push([[3685],{363:e=>{e.exports=JSON.parse('{"permalink":"/qui/blog/tags/hello","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
