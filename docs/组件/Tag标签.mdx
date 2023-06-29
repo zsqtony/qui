@@ -1,0 +1,140 @@
+# Tag 标签
+
+export const DEUXSTag = ({ label, bgColor = "#1677ff" }) => (
+  <span
+    style={{
+      padding: "3px 6px",
+      fontSize: "12px",
+      backgroundColor: bgColor,
+      color: "#fff",
+      borderRadius: "3px",
+    }}
+  >
+    {label}
+  </span>
+);
+
+#### 简单示例：
+
+<DEUXSTag label="附近地铁" />
+<br />
+<DEUXSTag label="附近商场" bgColor="#FF9416" />
+<br />
+<DEUXSTag label="附近学校" bgColor="#000" />
+
+#### 创建 React tsx 文件后：直接复制代码可用
+
+```jsx
+export default function Tag({ label, bgColor = "#1677ff" }) {
+  return (
+    <span
+      style={{
+        padding: "3px 6px",
+        fontSize: "12px",
+        backgroundColor: bgColor,
+        color: "#fff",
+        borderRadius: "3px",
+      }}
+    >
+      {label}
+    </span>
+  );
+}
+```
+
+#### 增加圆角形状控制
+
+export const SHAPEXSTag = ({ label, shape = "3px", bgColor = "#1677ff" }) => (
+  <span
+    style={{
+      padding: "3px 6px",
+      fontSize: "12px",
+      backgroundColor: bgColor,
+      color: "#fff",
+      borderRadius: shape,
+    }}
+  >
+    {label}
+  </span>
+);
+
+<SHAPEXSTag label="三房一厅" shape="100px" />
+<br />
+<SHAPEXSTag label="五房两厅" bgColor="#FF9416" shape="100px" />
+<br />
+<SHAPEXSTag label="朝南方向" bgColor="#ff4d4f" shape="100px" />
+
+#### 增加：shape 参数，默认是 3px 的圆角，可以直接 0px
+
+```jsx
+export default function Tag({ label, shape = "3px", bgColor = "#1677ff" }) {
+  return (
+    <span
+      style={{
+        padding: "3px 6px",
+        fontSize: "12px",
+        backgroundColor: bgColor,
+        color: "#fff",
+        borderRadius: shape,
+      }}
+    >
+      {label}
+    </span>
+  );
+}
+```
+
+#### 背景变为透明模式
+
+export const TYPEXSTag = ({
+  label,
+  type = "dark",
+  shape = "3px",
+  bgColor = "#1677ff",
+}) => (
+  <span
+    style={{
+      padding: "3px 6px",
+      fontSize: "12px",
+      backgroundColor: type == "dark" ? bgColor : "",
+      color: type == "dark" ? "#fff" : bgColor,
+      borderRadius: shape,
+      border: `1px solid ${bgColor}`,
+    }}
+  >
+    {label}
+  </span>
+);
+
+<TYPEXSTag label="在岸的对面" type="plain" />
+<br />
+<TYPEXSTag label="在岸的对面" type="plain" shape="100px" bgColor="#FF9416" />
+
+#### 增加一种类型：type="plain"
+
+```jsx
+export default function Tag({
+  label,
+  type = "dark",
+  shape = "3px",
+  bgColor = "#1677ff",
+}) {
+  return (
+    <span
+      style={{
+        padding: "3px 6px",
+        fontSize: "12px",
+        backgroundColor: type == "dark" ? bgColor : "",
+        color: type == "dark" ? "#fff" : bgColor,
+        borderRadius: shape,
+        border: `1px solid ${bgColor}`,
+      }}
+    >
+      {label}
+    </span>
+  );
+}
+```
+
+最后简单的写了下判断，这样一个简单切比较完善的 Tag 标签就写好了，可以复制粘贴到自己项目里，直接成为你的组件<br />
+当然了还有优化的空间，你可以继续改动他
