@@ -1,0 +1,155 @@
+# Button 按钮
+
+import XSButton from "@site/src/components/XSButton";
+
+自行创建好 React，tsx 的文件
+
+#### 引入方式
+
+在需要用到的页面或组件里，引入即可
+
+```jsx
+/* 根据实际开发路径为准 */
+import XSButton from "@/components/XSButton";
+```
+
+<br />
+
+#### 不同颜色
+
+<div style={{ gap: "8px", display: "inline-flex" }}>
+  <XSButton label="默认按钮" />
+  <XSButton label="默认按钮" bgColor="#FF0025" />
+  <XSButton label="默认按钮" bgColor="#4A08CA" />
+</div>
+<br />
+<br />
+
+```jsx
+<XSButton label="默认按钮" />
+<XSButton label="默认按钮" bgColor="#FF0025" />
+<XSButton label="默认按钮" bgColor="#4A08CA" />
+```
+
+<br />
+<br />
+
+#### 圆角设置 shape
+
+<div style={{ gap: "8px", display: "inline-flex" }}>
+  <XSButton label="默认按钮" shape="5px" />
+  <XSButton label="默认按钮" shape="10px" bgColor="#FF0025" />
+  <XSButton label="默认按钮" shape="100px" bgColor="#4A08CA" />
+</div>
+<br />
+<br />
+
+```jsx
+<XSButton label="默认按钮" shape="5px" />
+<XSButton label="默认按钮" shape="10px" bgColor="#FF0025" />
+<XSButton label="默认按钮" shape="100px" bgColor="#4A08CA" />
+```
+
+<br />
+<br />
+
+#### 宽度设置 width
+
+可以设置 100%
+
+<div style={{ gap: "8px", display: "inline-flex" }}>
+  <XSButton label="默认按钮" shape="0" width="100px" />
+  <XSButton label="默认按钮" shape="10px" width="200px" bgColor="#FF0025" />
+  <XSButton label="默认按钮" shape="100px" width="300px" bgColor="#4A08CA" />
+</div>
+<br />
+<br />
+
+```jsx
+<XSButton label="默认按钮" shape="0" width="100px" />
+<XSButton label="默认按钮" shape="10px" width="200px" bgColor="#FF0025" />
+<XSButton label="默认按钮" shape="100px" width="300px" bgColor="#4A08CA" />
+```
+
+<br />
+<br />
+
+#### 高度设置 height
+
+<div style={{ gap: "8px", display: "inline-flex" }}>
+  <XSButton label="默认按钮" shape="0" width="100px" height="32px" />
+  <XSButton
+    label="默认按钮"
+    shape="10px"
+    width="200px"
+    height="52px"
+    bgColor="#FF0025"
+  />
+  <XSButton
+    label="默认按钮"
+    shape="100px"
+    width="300px"
+    height="62px"
+    bgColor="#4A08CA"
+  />
+</div>
+<br />
+<br />
+
+```jsx
+<XSButton label="默认按钮" shape="0" width="100px" height="32px" />
+<XSButton label="默认按钮" shape="10px" width="200px" height="52px" bgColor="#FF0025" />
+<XSButton label="默认按钮" shape="100px" width="300px" height="62px" bgColor="#4A08CA" />
+```
+
+#### API
+
+##### Props
+
+| 属性    | 说明     | 类型   | 默认值  | 可选值                                                                              |
+| ------- | -------- | ------ | ------- | ----------------------------------------------------------------------------------- |
+| label   | 文字内容 | String | -       | -                                                                                   |
+| shape   | 设置圆角 | String | 3px     | 根据实际开发自行设置值，如果是用于开发小程序可使用：2 倍的 rpx 为单位<br />如：6rpx |
+| width   | 设置宽度 | String | 80px    | 根据实际情况设置                                                                    |
+| height  | 设置高度 | String | 32px    | 根据实际情况设置                                                                    |
+| bgColor | 背景色   | String | #1677ff | 根据实际情况设置                                                                    |
+
+#### Event 事件
+
+| 事件名  | 说明     |
+| ------- | -------- |
+| onClick | 单击事件 |
+
+#### 最终代码
+
+直接复制，即可使用
+
+```jsx
+import React from "react";
+import "../../css/button.css";
+
+export default function index({
+  label,
+  onClick,
+  width = "80px",
+  height = "32px",
+  shape = "3px",
+  bgColor = "#1677ff",
+}) {
+  return (
+    <button
+      className="qui-btn"
+      onClick={() => onClick?.()}
+      style={{
+        borderRadius: shape,
+        backgroundColor: bgColor,
+        width: width,
+        height: height,
+        lineHeight: height,
+      }}
+    >
+      {label}
+    </button>
+  );
+}
+```

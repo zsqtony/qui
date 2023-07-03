@@ -16,6 +16,8 @@ export const DEUXSTag = ({ label, bgColor = "#1677ff" }) => (
 
 #### 简单示例：
 
+支付 React，Vue，uniApp，如果是使用在小程序开发，可把 px 的单位换成 2 倍的 rpx
+
 <DEUXSTag label="附近地铁" />
 <br />
 <DEUXSTag label="附近商场" bgColor="#FF9416" />
@@ -84,7 +86,7 @@ export default function Tag({ label, shape = "3px", bgColor = "#1677ff" }) {
 }
 ```
 
-#### 背景变为透明模式
+#### 背景变为透明背景样式
 
 export const TYPEXSTag = ({
   label,
@@ -136,5 +138,15 @@ export default function Tag({
 }
 ```
 
-最后简单的写了下判断，这样一个简单切比较完善的 Tag 标签就写好了，可以复制粘贴到自己项目里，直接成为你的组件<br />
-当然了还有优化的空间，你可以继续改动他
+最后简单的写了下判断，这样一个简单且比较完善的 Tag 标签就写好了，可以直接复制粘贴到自己项目里，直接成为你的组件<br />
+当然了还有优化的空间，你可以继续优化改动他
+
+#### API
+
+#### Props
+
+| 属性  | 说明         | 类型   | 默认值 | 可选值                                                                              |
+| ----- | ------------ | ------ | ------ | ----------------------------------------------------------------------------------- |
+| label | 文字内容     | String | -      | -                                                                                   |
+| shape | 设置圆角     | String | 3px    | 根据实际开发自行设置值，如果是用于开发小程序可使用：2 倍的 rpx 为单位<br />如：6rpx |
+| plain | 镂空透明背景 | String | dark   | dark/plain                                                                          |

@@ -1,0 +1,10 @@
+.qui-btn{
+    font-size: 12px;
+    color: #fff;
+    background-color: #1677ff;
+    border:none;
+    cursor: pointer;
+}
+.qui-btn:hover{
+    opacity: 0.9;
+}
