@@ -72,3 +72,29 @@ import XSTag from "@/components/XSTag";
 | label | 文字内容     | String | -      | -                                                                                   |
 | shape | 设置圆角     | String | 3px    | 根据实际开发自行设置值，如果是用于开发小程序可使用：2 倍的 rpx 为单位<br />如：6rpx |
 | plain | 镂空透明背景 | String | dark   | dark/plain                                                                          |
+
+#### 最终代码
+
+```jsx
+export default function index({
+  label,
+  type = "dark",
+  shape = "3px",
+  bgColor = "#1677ff",
+}) {
+  return (
+    <span
+      style={{
+        padding: "3px 6px",
+        fontSize: "12px",
+        backgroundColor: type == "dark" ? bgColor : "",
+        color: type == "dark" ? "#fff" : bgColor,
+        borderRadius: shape,
+        border: `1px solid ${bgColor}`,
+      }}
+    >
+      {label}
+    </span>
+  );
+}
+```
