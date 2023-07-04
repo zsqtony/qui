@@ -1,141 +1,63 @@
 # Tag 标签
 
-export const DEUXSTag = ({ label, bgColor = "#1677ff" }) => (
-  <span
-    style={{
-      padding: "3px 6px",
-      fontSize: "12px",
-      backgroundColor: bgColor,
-      color: "#fff",
-      borderRadius: "3px",
-    }}
-  >
-    {label}
-  </span>
-);
+import XSTag from "@site/src/components/XSTag";
 
-#### 简单示例：
+自行创建好 React，tsx 的文件
 
-支付 React，Vue，uniApp，如果是使用在小程序开发，可把 px 的单位换成 2 倍的 rpx
+#### 引入方式
 
-<DEUXSTag label="附近地铁" />
-<br />
-<DEUXSTag label="附近商场" bgColor="#FF9416" />
-<br />
-<DEUXSTag label="附近学校" bgColor="#000" />
-
-#### 创建 React tsx 文件后：直接复制代码可用
+在需要用到的页面或组件里，引入即可
 
 ```jsx
-export default function Tag({ label, bgColor = "#1677ff" }) {
-  return (
-    <span
-      style={{
-        padding: "3px 6px",
-        fontSize: "12px",
-        backgroundColor: bgColor,
-        color: "#fff",
-        borderRadius: "3px",
-      }}
-    >
-      {label}
-    </span>
-  );
-}
+/* 根据实际开发路径为准 */
+import XSTag from "@/components/XSTag";
 ```
 
-#### 增加圆角形状控制
+#### 不同颜色
 
-export const SHAPEXSTag = ({ label, shape = "3px", bgColor = "#1677ff" }) => (
-  <span
-    style={{
-      padding: "3px 6px",
-      fontSize: "12px",
-      backgroundColor: bgColor,
-      color: "#fff",
-      borderRadius: shape,
-    }}
-  >
-    {label}
-  </span>
-);
-
-<SHAPEXSTag label="三房一厅" shape="100px" />
+<XSTag label="附近地铁" />
 <br />
-<SHAPEXSTag label="五房两厅" bgColor="#FF9416" shape="100px" />
+<XSTag label="附近商场" bgColor="#FF9416" />
 <br />
-<SHAPEXSTag label="朝南方向" bgColor="#ff4d4f" shape="100px" />
-
-#### 增加：shape 参数，默认是 3px 的圆角，可以直接 0px
+<XSTag label="附近学校" bgColor="#000" />
+<br />
+<br />
 
 ```jsx
-export default function Tag({ label, shape = "3px", bgColor = "#1677ff" }) {
-  return (
-    <span
-      style={{
-        padding: "3px 6px",
-        fontSize: "12px",
-        backgroundColor: bgColor,
-        color: "#fff",
-        borderRadius: shape,
-      }}
-    >
-      {label}
-    </span>
-  );
-}
+<XSTag label="附近地铁" />
+<XSTag label="附近商场" bgColor="#FF9416" />
+<XSTag label="附近学校" bgColor="#000" />
 ```
 
-#### 背景变为透明背景样式
+#### 圆角设置 shape
 
-export const TYPEXSTag = ({
-  label,
-  type = "dark",
-  shape = "3px",
-  bgColor = "#1677ff",
-}) => (
-  <span
-    style={{
-      padding: "3px 6px",
-      fontSize: "12px",
-      backgroundColor: type == "dark" ? bgColor : "",
-      color: type == "dark" ? "#fff" : bgColor,
-      borderRadius: shape,
-      border: `1px solid ${bgColor}`,
-    }}
-  >
-    {label}
-  </span>
-);
+默认是 3px 的圆角，可以直接 0px
 
-<TYPEXSTag label="在岸的对面" type="plain" />
+<XSTag label="三房一厅" shape="100px" />
 <br />
-<TYPEXSTag label="在岸的对面" type="plain" shape="100px" bgColor="#FF9416" />
-
-#### 增加一种类型：type="plain"
+<XSTag label="五房两厅" bgColor="#FF9416" shape="100px" />
+<br />
+<XSTag label="朝南方向" bgColor="#ff4d4f" shape="100px" />
+<br />
+<br />
 
 ```jsx
-export default function Tag({
-  label,
-  type = "dark",
-  shape = "3px",
-  bgColor = "#1677ff",
-}) {
-  return (
-    <span
-      style={{
-        padding: "3px 6px",
-        fontSize: "12px",
-        backgroundColor: type == "dark" ? bgColor : "",
-        color: type == "dark" ? "#fff" : bgColor,
-        borderRadius: shape,
-        border: `1px solid ${bgColor}`,
-      }}
-    >
-      {label}
-    </span>
-  );
-}
+<XSTag label="三房一厅" shape="100px" />
+<XSTag label="五房两厅" bgColor="#FF9416" shape="100px" />
+<XSTag label="朝南方向" bgColor="#ff4d4f" shape="100px" />
+```
+
+#### 背景变为透明背景样式 type="plain"
+
+<XSTag label="在岸的对面" type="plain" />
+<br />
+<XSTag label="在岸的对面" type="plain" shape="100px" bgColor="#FF9416" />
+<br />
+<br />
+
+```jsx
+<XSTag label="在岸的对面" type="plain" />
+<XSTag label="在岸的对面" type="plain" shape="100px" bgColor="#FF9416" />
 ```
 
 最后简单的写了下判断，这样一个简单且比较完善的 Tag 标签就写好了，可以直接复制粘贴到自己项目里，直接成为你的组件<br />
